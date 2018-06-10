@@ -1,0 +1,30 @@
+spring:
+  boot:
+    admin:
+      url: http://localhost:9000/monitoring-service/admin/
+      api-path: instances
+
+endpoints:
+  sensitive: false
+    
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka-server/eureka/
+      
+logging:
+  file: ${spring.application.name}.log
+  
+info:
+  app:
+    name: ${spring.application.name}
+    description: User Management Service for managing users
+  tech:
+    - Java-8
+    - Spring Boot
+    - Spring Cloud Eureka Client
+    - Spring Boot Admin Client
+    - Spring Boot Oauth Security
+    

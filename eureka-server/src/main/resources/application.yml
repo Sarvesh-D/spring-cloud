@@ -1,0 +1,30 @@
+management:
+  endpoint:
+    health:
+      show-details: ALWAYS
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+eureka:
+  server:
+    eviction-interval-timer-in-ms: 10000
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+      
+logging:
+  file: ${spring.application.name}.log
+  
+info:
+  app:
+    name: ${spring.application.name}
+    description: Eureka Server for registering applications
+  tech:
+    - Java-8
+    - Spring Boot
+    - Spring Cloud Eureka Server
+    - Spring Boot Admin Client
+    - Spring Boot Oauth Security
+  

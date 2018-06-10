@@ -1,0 +1,39 @@
+spring:
+  boot:
+    admin:
+      context-path: /admin
+      
+security:
+  oauth2:
+    client:
+      clientId: acme
+      clientSecret: acmesecret
+      access-token-uri: http://localhost:8080/oauth/token
+      user-authorization-uri: http://localhost:8080/oauth/authorize
+    resource:
+      user-info-uri: http://localhost:8080/me
+      
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka-server/eureka/
+      
+logging:
+  file: ${spring.application.name}.log
+  level:
+    org.springframework.security: DEBUG
+    org.springframework.security.oauth2: DEBUG
+  
+info:
+  app:
+    name: ${spring.application.name}
+    description: Monitoring Service for monitoring spring boot applications registered with Eureka
+  tech:
+    - Java-8
+    - Spring Boot
+    - Spring Cloud Eureka Client
+    - Spring Boot Admin Server
+    - Spring Boot Oauth Security
+    
